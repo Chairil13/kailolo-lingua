@@ -1,0 +1,20 @@
+﻿[
+  {
+    "pron": ["Abadi"],
+    "kai": "Abadi",
+    "ind": "Abadi",
+    "kai_syns": ["Selamanya"],
+    "ind_syns": ["Selamanya"],
+    "sents": [
+      "Gunung-gunung yang menjulang tinggi memberikan kesan keindahan yang abadi"
+    ]
+  },
+  {
+    "pron": ["Rahan"],
+    "kai": "Rahan",
+    "ind": "Abang",
+    "kai_syns": ["Kaka"],
+    "ind_syns": ["Kakak"],
+    "sents": ["Ketika kecil, abang saya sering membantu ibu di dapur"]
+  }
+]
