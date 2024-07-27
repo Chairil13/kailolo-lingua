@@ -50,7 +50,7 @@ class _WordPageState extends State<WordPage> {
   Future<void> loadWords() async {
     try {
       final directory = await getApplicationDocumentsDirectory();
-      final file = File('${directory.path}/KamusKailolo.json');
+      final file = File('${directory.path}assets/KamusKailolo.json');
       if (await file.exists()) {
         final jsonString = await file.readAsString();
         final List<dynamic> jsonData = jsonDecode(jsonString);
@@ -63,7 +63,7 @@ class _WordPageState extends State<WordPage> {
       } else {
         final response = await http.get(
           Uri.parse(
-              'https://raw.githubusercontent.com/Chairil13/database-kamus-kailolo/main/assets/KamusKailolo.json'),
+              'https://raw.githubusercontent.com/Ifan-07/Kailolo-lingua/main/assets/KamusKailolo.json'),
         );
         if (response.statusCode == 200) {
           final jsonString = response.body;

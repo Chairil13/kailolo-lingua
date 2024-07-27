@@ -1,4 +1,3 @@
-import 'dart:math';
 import 'package:dictionary/components/utils.dart';
 import 'package:dictionary/main.dart';
 import 'package:dictionary/pages/about_dev.dart';
@@ -28,16 +27,16 @@ class QuizPage extends StatefulWidget {
   const QuizPage({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _QuizPageState createState() => _QuizPageState();
 }
 
 class _QuizPageState extends State<QuizPage> {
   final Map<String, String> dictionary = {
-    'rumah': 'house',
+    'Abang': 'Rahan',
     'buah': 'fruit',
     'mobil': 'car',
     'kucing': 'cat',
-    // Tambahkan kata-kata dari kamus bahasa daerah Anda di sini
   };
 
   List<String> questions = [];
@@ -54,12 +53,9 @@ class _QuizPageState extends State<QuizPage> {
 
   void generateQuestions() {
     List<String> keys = dictionary.keys.toList();
-    questions.clear();
-    for (int i = 0; i < 4; i++) {
-      int randomIndex = Random().nextInt(keys.length);
-      String question = keys[randomIndex];
-      questions.add(question);
-    }
+    keys.shuffle(); // Shuffle the keys
+    questions =
+        keys.take(4).toList(); // Pick the first four shuffled keys as questions
     setState(() {
       currentQuestionIndex = 0;
       correctAnswer = dictionary[questions[currentQuestionIndex]]!;
